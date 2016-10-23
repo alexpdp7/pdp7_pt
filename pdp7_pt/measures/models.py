@@ -19,6 +19,9 @@ class Measure(models.Model):
     def __str__(self):
         return '{0} {1}'.format(self.series, self.when)
 
+    class Meta:
+        ordering = ['-when']
+
 
 class FloatMeasure(Measure):
     value = models.FloatField()
